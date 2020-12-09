@@ -25,7 +25,7 @@ Then update nginx.conf to use the certificates from the right path:
 - ssl_certificate_key
 - ssl_trusted_certificate
 
-## 2. Start service
+## 2. Configure & Start service
 
 One might want to configure the public listener ports for nginx, this can be done via docker-compose.yml:
 
@@ -34,6 +34,9 @@ ports:
   - "<< desired http port >>:80"
   - "<< desired https port >>:443"
 ```
+
+Replace SERVER.DOMAIN.TLD in `nginx.conf` to the fqdn of your machine.
+
 The following command will do the heavy lifting:
 
 ```
